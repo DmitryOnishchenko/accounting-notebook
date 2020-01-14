@@ -1,0 +1,33 @@
+{
+  "name": "accounting-notebook",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "node -r source-map-support/register ./dist/src/server/_runServer.js",
+    "build": "rm -rf ./dist && npm run copy:resources && tsc --inlineSourceMap true && ./copy-default-seeders.sh",
+    "docker:up": "npm run down && docker-compose -f docker-compose.local.yml up -d",
+    "docker:down": "docker-compose -f docker-compose.local.yml down"
+  },
+  "dependencies": {
+    "@hapi/hapi": "18.4.0",
+    "aguid": "2.0.0",
+    "bluebird": "3.7.2",
+    "bignumber.js": "^9.0.0",
+    "config": "3.2.4",
+    "joi": "14.3.1",
+    "log4js": "4.1.0",
+    "redis": "2.8.0",
+    "redlock": "4.1.0",
+    "source-map-support": "0.5.16"
+  },
+  "devDependencies": {
+    "@types/bluebird": "3.5.26",
+    "@types/hapi__hapi": "^18.2.1",
+    "@types/joi": "^14.3.3",
+    "@types/node": "10.14.4",
+    "@types/redis": "2.8.12",
+    "@types/redlock": "^3.0.4",
+    "tslint": "5.16.0",
+    "typescript": "3.7.4"
+  }
+}

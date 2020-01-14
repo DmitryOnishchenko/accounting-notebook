@@ -1,0 +1,27 @@
+{
+  "extends": ["tslint:recommended"],
+  "linterOptions": {
+    "exclude": [
+      "node_modules/**/*.ts",
+      "dist/**/*"
+    ]
+  },
+  "rules": {
+    "indent": [true, "spaces", 2],
+    "quotemark": [true, "single", "avoid-escape", "avoid-template"],
+    "trailing-comma": [false, {"multiline": "always", "singleline": "never"}],
+    "object-literal-key-quotes": false,
+    "object-literal-sort-keys": false,
+    "interface-name": false,
+    "ordered-imports": false,
+    "max-line-length": false,
+    "no-empty": false,
+    "member-ordering": false,
+    "class-name": false,
+    "max-classes-per-file": false,
+    "member-access": false,
+    "no-shadowed-variable": false,
+    "semicolon": [true, "always", "ignore-bound-class-methods"],
+    "no-var-requires": false
+  }
+}
