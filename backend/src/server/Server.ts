@@ -7,6 +7,7 @@ const LOG = Logger.getLogger('Server.ts');
 import { GracefulShutdownHelper } from '../utils/GracefulShutdownHelper';
 
 import InfoRoutes from '../routes/info/_InfoRoutes';
+import TransactionsRoutes from '../routes/transactions/_TransactionsRoutes';
 
 export async function start() {
   try {
@@ -24,8 +25,9 @@ export async function start() {
 
     await GracefulShutdownHelper.applyToServer(server, LOG);
 
-    // routes
+    // init routes
     server.route(InfoRoutes);
+    server.route(TransactionsRoutes);
 
     await server.start();
     LOG.info(`Server running at: ${server.info.uri}`);
