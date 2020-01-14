@@ -34,7 +34,7 @@ export default class AddTransactionHandler {
 
       // check balance if type is credit
       if (type === TransactionType.credit) {
-        if (newBalance.lte(0)) {
+        if (newBalance.lt(0)) {
           LOG.error(
             `UserId: ${userId}. Failed to add new ${type} transaction - `
             + `not enough balance. Amount: ${amount}, current balance: ${currentBalance}`
