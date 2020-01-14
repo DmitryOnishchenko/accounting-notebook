@@ -48,6 +48,7 @@ export default class AddTransactionHandler {
       }
 
       const transaction = await FakeStorageApi.createTransaction(userId, type, amount);
+      await FakeStorageApi.setBalanceByUserId(userId, newBalance);
 
       LOG.info(
         `UserId: ${userId}. Created new ${type} transaction - `

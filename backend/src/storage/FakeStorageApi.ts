@@ -40,6 +40,10 @@ export default class FakeStorageApi {
     return internal.balances[userId] || new BigNumber(0);
   }
 
+  static async setBalanceByUserId(userId: number, newBalance: BigNumber): Promise<void> {
+    internal.balances[userId] = newBalance;
+  }
+
   static async createTransaction(userId: number, type: TransactionType, amount: string): Promise<Transaction> {
     const newTransaction: Transaction = {
       id: TX_ID++,
