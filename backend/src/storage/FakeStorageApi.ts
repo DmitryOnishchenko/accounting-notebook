@@ -27,6 +27,15 @@ export default class FakeStorageApi {
     return transactions.slice(start, end);
   }
 
+  static async getTransactionById(userId: number, id: number): Promise<Transaction> {
+    const transactions = internal.transactionsMap[userId];
+    if (!transactions) {
+      return null;
+    }
+
+    return internal.transactionsMap[userId].find((tx) => tx.id === id);
+  }
+
   static async getBalanceByUserId(userId: number): Promise<BigNumber> {
     return internal.balances[userId] || new BigNumber(0);
   }
@@ -80,5 +89,14 @@ internal.transactionsMap[1] = [
     type: TransactionType.credit,
     amount: '50',
     createdAt: new Date('2020-01-03 22:00:00')
+  }
+];
+internal.transactionsMap[999] = [
+  {
+    id: 1,
+    userId: 999,
+    type: TransactionType.debit,
+    amount: '125000000',
+    createdAt: new Date('2015-01-01 01:00:00')
   }
 ];

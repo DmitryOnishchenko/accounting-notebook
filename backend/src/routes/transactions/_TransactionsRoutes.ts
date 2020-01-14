@@ -2,6 +2,7 @@ import { ServerRoute } from '@hapi/hapi';
 
 import GetTransactionsHistoryHandler from './GetTransactionsHistoryHandler';
 import AddTransactionHandler from './AddTransactionHandler';
+import GetTransactionHandler from './GetTransactionHandler';
 
 export default [
   {
@@ -21,6 +22,14 @@ export default [
       auth: false,
       validate: AddTransactionHandler.validate
     }
+  },
+  {
+    method: 'GET',
+    path: '/transactions/{id}',
+    handler: GetTransactionHandler.handle,
+    options: {
+      auth: false,
+      validate: GetTransactionHandler.validate
+    }
   }
-
 ] as ServerRoute[];

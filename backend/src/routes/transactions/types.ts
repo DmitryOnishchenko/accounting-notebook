@@ -14,3 +14,7 @@ export interface AddTransactionResponse {
   transactionId: number;
   balance: string;
 }
+
+export interface GetTransactionParams {
+  id: number;
+}
