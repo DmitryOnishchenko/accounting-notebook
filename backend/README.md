@@ -6,6 +6,7 @@
 
 ### To start service locally:
 ```
+npm install
 npm run build
 npm run docker:up
 npm run start
