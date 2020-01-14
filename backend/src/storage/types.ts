@@ -1,4 +1,10 @@
+import BigNumber from 'bignumber.js';
+
 export interface InternalStorageInterface {
+  // userId
+  balances: {
+    [key: number]: BigNumber;
+  };
   transactionsMap: {
     // userId
     [key: number]: Transaction[];
@@ -6,8 +12,8 @@ export interface InternalStorageInterface {
 }
 
 export enum TransactionType {
-  DEBIT = 'debit',
-  CREDIT = 'credit'
+  debit = 'debit',
+  credit = 'credit'
 }
 
 export interface Transaction {

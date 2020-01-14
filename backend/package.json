@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node -r source-map-support/register ./dist/src/server/_runServer.js",
     "build": "rm -rf ./dist && npm run copy:resources && tsc --inlineSourceMap true && ./copy-default-seeders.sh",
-    "docker:up": "npm run down && docker-compose -f docker-compose.local.yml up -d",
+    "docker:up": "npm run docker:down && docker-compose -f docker-compose.local.yml up -d",
     "docker:down": "docker-compose -f docker-compose.local.yml down"
   },
   "dependencies": {

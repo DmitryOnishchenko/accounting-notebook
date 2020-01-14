@@ -1,0 +1,19 @@
+version: '2.1'
+
+services:
+  redis:
+    image: redis:3.2.10
+    container_name: accounting_notebook_redis
+    hostname: accounting_notebook_redis
+    restart: always
+    expose:
+      - 6379
+    ports:
+      - 6379:6379
+    command: --save ""
+    volumes:
+      - db-redis:/data
+    network_mode: "bridge"
+
+volumes:
+  db-redis:
