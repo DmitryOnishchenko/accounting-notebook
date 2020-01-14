@@ -1,10 +1,10 @@
-#### Dependencies
+### Dependencies
 - NodeJS v10.15.3
 - Redis
 - Docker 
 - docker-compose
 
-#### To start service locally:
+### To start service locally:
 ```
 npm run build
 npm run docker:up
@@ -13,8 +13,8 @@ npm run start
 
 App will be running on **5000** port (see `backend/config` dir).
 
-#### API
-##### Basic healthcheck endpoint 
+## API
+### Basic healthcheck endpoint 
 `GET /info/healthcheck/ping`
 
 Response 200 OK:
@@ -24,7 +24,7 @@ Response 200 OK:
 }
 ```
 
-##### Get user balance 
+### Get user balance 
 `GET /balance`
 
 Response 200 OK:
@@ -34,7 +34,7 @@ Response 200 OK:
 }
 ```
 
-##### Get transactions history
+### Get transactions history
 `GET /transactions`
 
 Has optional query arguments for pagination:
@@ -65,7 +65,7 @@ Response 200 OK:
 }
 ```
 
-##### Add new transaction
+### Add new transaction
 `POST /transactions`  
 Required payload:
 - **type** - \<string> - valid values: `debit`, `credit`
@@ -105,7 +105,7 @@ Returns:
 }
 ```
 
-##### Get transaction by id
+### Get transaction by id
 `GET /transactions/{id}`
 Returns transaction by id.
 Returns **400 Bad Request** if invalid transaction id was provided.
