@@ -19,7 +19,7 @@
     "redis": "2.8.0",
     "redlock": "4.1.0",
     "source-map-support": "0.5.16",
-    "lodash": "4.17.15"
+    "lodash": "4.17.19"
   },
   "devDependencies": {
     "@types/bluebird": "3.5.26",
