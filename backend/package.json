@@ -9,7 +9,7 @@
     "docker:down": "docker-compose -f docker-compose.local.yml down"
   },
   "dependencies": {
-    "@hapi/hapi": "18.4.0",
+    "@hapi/hapi": "19.1.1",
     "aguid": "2.0.0",
     "bluebird": "3.7.2",
     "bignumber.js": "^9.0.0",
